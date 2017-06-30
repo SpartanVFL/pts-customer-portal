@@ -232,6 +232,8 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="Images\pts-logo.png" />
+    <Content Include="Logout.aspx" />
     <Content Include="Service.aspx" />
     <Content Include="Content\bootstrap-cosmo.css" />
     <Content Include="Content\bootstrap.css" />
@@ -281,6 +283,7 @@
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
+    <Content Include="ViewTickets.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <Content Include="packages.config" />
@@ -414,6 +417,14 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="CreateWorkItem.cs" />
+    <Compile Include="GetWorkItems.cs" />
+    <Compile Include="Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Service.aspx.cs">
       <DependentUpon>Service.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -448,12 +459,20 @@
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="UpdateWorkItem.cs" />
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewTickets.aspx.cs">
+      <DependentUpon>ViewTickets.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewTickets.aspx.designer.cs">
+      <DependentUpon>ViewTickets.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

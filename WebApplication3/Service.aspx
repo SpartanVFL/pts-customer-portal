@@ -4,38 +4,53 @@
 
         <main class="container">
 
-            <div class="row" style="padding-top: 5rem;">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            < class="row" style="padding-top: 5rem;">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-left: 3rem; padding-top: 5rem;">
                     <h2>Submit a ticket...</h2>
                 </div>
-            </div>
 
-            <div class="row">       
-                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" style="padding-top: 3rem; padding-bottom: 5rem;">
-                    <label>Title</label>
-                    <asp:TextBox ID="txtSupportTitle" runat="server" CssClass="form-control"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtSupportTitle" Display="Dynamic" ErrorMessage="Title is required" CssClass="text-danger" SetFocusOnError="False"></asp:RequiredFieldValidator>
-                    <br />
-                    <label>Description</label>
-                    <asp:Textbox ID="txtSupportDescr" runat="server" CssClass="form-control"></asp:Textbox>
-                    <br />
-                    <asp:Button runat="server" type="submit" Text="Submit" class="btn btn-default" OnClick="btnSubmitSupport_Click" />
-                    <br />               
-                </div>
 
-                <%-- Result Label --%>
-                <div class="form-group" style="padding-top:2rem;">
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="float: left;">
-                        <asp:Label ID="lblResult" runat="server" Text="Label" CssClass="text-danger" ForeColor="Green" Visible="False"></asp:Label>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
+                <!-- Left Container -->
                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
 
-                </div>
-            </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        
+                        <div class="form-group" id="showConfirmation" runat="server" style="padding-bottom: 1rem; padding-top: 3rem; padding-left: 0 !important; display: none;">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-left: 0 !important;">
+                                <asp:Label ID="lblResult" runat="server" Text="Label" CssClass="text-danger" ForeColor="Green" Visible="False"></asp:Label>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-top: 3rem; padding-bottom: 5rem;">
+                        <label>Title</label>
+                        <asp:TextBox ID="txtSupportTitle" runat="server" CssClass="form-control"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtSupportTitle" Display="Dynamic" ErrorMessage="Title is required" CssClass="text-danger" SetFocusOnError="False"></asp:RequiredFieldValidator>
+                        <br />
+                        <label>Description</label>
+                        <asp:Textbox ID="txtSupportDescr" runat="server" CssClass="form-control textbox-adjust" TextMode="Multiline" style="height: 150px !important; width: 350px !important;" />
+                        <br />
+                        <asp:Button runat="server" type="submit" Text="Submit" class="btn btn-default" OnClick="btnSubmitSupport_Click" />
+                        <br />               
+                    </div>
+                    </div> 
+                <!-- End Left Container -->
+                  
+
+                <!-- Right Container -->
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                       
+
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        
+                    </div>
+                        </div>
+                    </div>
+                <!-- End of Right Container -->     
+               
         </main>
 
         

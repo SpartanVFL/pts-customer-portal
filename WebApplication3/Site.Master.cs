@@ -46,6 +46,19 @@ namespace WebApplication3
             }
 
             Page.PreLoad += master_Page_PreLoad;
+
+            // if user is logged out, show login
+            if (Session["user"] == null)
+            {
+                loginId.Visible = true;
+                logoutId.Visible = false;
+            }
+            // if user is logged in, show logout
+            if (Session["user"] != null)
+            {
+                logoutId.Visible = true;
+                loginId.Visible = false;
+            }
         }
 
         protected void master_Page_PreLoad(object sender, EventArgs e)

@@ -3,13 +3,19 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using Newtonsoft.Json;
+using System.Web.UI;
 
 namespace WebApplication3
 {
-    public class CreateWorkItem
+    public class CreateWorkItem : Page
     {
-        public string CreateWorkItemMethod(string wiTitle, string wiDescription)
+        
+        
+
+
+        public string CreateWorkItemMethod(string wiTitle, string wiDescription, string wiSubmittedBy)
         {
+    
 
             //Define variables
             string workItemTitle = wiTitle;
@@ -20,10 +26,11 @@ namespace WebApplication3
             string credentials = Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes(string.Format("{0}:{1}", "mwest", personalAccessToken)));
 
             //Create an object for the Json payload 
-            Object[] patchDocument = new Object[3];
+            Object[] patchDocument = new Object[4];
             patchDocument[0] = new { op = "add", path = "/fields/System.Title", value = workItemTitle };
             patchDocument[1] = new { op = "add", path = "/fields/System.AreaPath", value = "pts\\nicol-managed-services" };
             patchDocument[2] = new { op = "add", path = "/fields/System.Description", value = workItemDescription };
+            patchDocument[3] = new { op = "add", path = "/fields/PTSProcess.SubmittedBy", value = wiSubmittedBy };
 
             //use the httpclient 
             using (var client = new HttpClient())

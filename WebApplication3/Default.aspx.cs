@@ -12,26 +12,29 @@ namespace WebApplication3
 {
     public partial class _Default : Page
     {
-        public string user, pass;
+     
+        public string user_entered, pass_entered, fname, lname, db_user, db_pass, trigger;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["user"] != null)
+            {
+                Response.Redirect("/Service", false);
+            }
         }
+
 
         public void ValidationClick(object sender, EventArgs e)
         {
-            user = email.Text;
-            pass = pwd.Text;
-            string[] cred = new string[] { };
-
+            user_entered = email.Text;
+            pass_entered = pwd.Text;
+            
             // check if empty
-            if (user == "" || pass == "")
+            if (user_entered == "" || pass_entered == "")
             {
                 Response.Write("<script>alert('Please enter username and password');</script>");
-                return;
+                
             }
-
 
             try
             {
@@ -45,34 +48,57 @@ namespace WebApplication3
                 {
                     connection.Open();
                     StringBuilder sb = new StringBuilder();
-                    sb.Append("select * from CSP_AUTH where CSP_USER = '" + user + "';");
+                    sb.Append("select * from CSP_AUTH where CSP_USER = '" + user_entered + "';");
                     string sql = sb.ToString();
 
-                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    using (SqlCommand a_command = new SqlCommand(sql, connection))
                     {
-                        using (SqlDataReader reader = command.ExecuteReader())
+                        using (SqlDataReader a_reader = a_command.ExecuteReader())
                         {
-                            while (reader.Read())
+                            while (a_reader.Read())
                             {
-                                user1.Text = reader.GetString(1);
-                                pass1.Text = reader.GetString(2);
-                                
-                            }
+                                db_user = a_reader.GetString(1);
+                                db_pass = a_reader.GetString(2);
+                                fname = a_reader.GetString(3);
+                                lname = a_reader.GetString(4);
+                                trigger = a_reader.GetString(5);
 
-                            if (pass != pass1.Text)
+                            }
+                            // if password is not correct, prompt user to try again else start session and redirect to /service page
+                            if (pass_entered != db_pass)
                             {
                                 pass1.Text = "Username or password entered is invalid. Try again.";
+                                
                             }
-                            else
+                            else 
                             {
+                                Session["user"] = user_entered;
                                 Response.Redirect("/Service");
                             }
+                            /* // update trigger column to 1 and redirect to /service page 
+                            else if (trigger == "0" || pass_entered == db_pass)
+                            {
+                                connection.Close();
+                                connection.Open();
+                                sb = new StringBuilder();
+                                sb.Append("update CSP_AUTH set CSP_TRIGGER = '0' where CSP_USER = '" + user_entered + "';");
+                                sql = sb.ToString();
+
+                                using (SqlCommand b_command = new SqlCommand(sql, connection))
+                                {
+                                    using (SqlDataReader b_reader = b_command.ExecuteReader())
+                                    {
+                                        Response.Redirect("/Service");
+                                    }
+                                }
+                            }
+                            */
                         }
+                        connection.Close();
                     }
-                    connection.Close();
                 }
             }
-            catch(SqlException ex)
+            catch (SqlException ex)
             {
                 // message error
                 user1.Text = Convert.ToString(ex);

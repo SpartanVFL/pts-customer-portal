@@ -13,6 +13,24 @@ namespace WebApplication3 {
     public partial class SiteMaster {
         
         /// <summary>
+        /// loginId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LoginView loginId;
+        
+        /// <summary>
+        /// logoutId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LoginView logoutId;
+        
+        /// <summary>
         /// MainContent control.
         /// </summary>
         /// <remarks>

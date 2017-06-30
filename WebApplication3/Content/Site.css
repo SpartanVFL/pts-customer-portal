@@ -1,7 +1,20 @@
-﻿/* Move down content because we have a fixed navbar that is 50px tall */
+﻿html {
+    position: relative;
+    min-height: 100%;
+}
+
 body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+    margin: 0 0 100px; /* bottom = footer height */
+    padding: 25px;
+}
+
+footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+    overflow: hidden;
 }
 
 /* Wrapping element */
@@ -38,11 +51,11 @@ input[type="select"] {
 }
 
 .navbar-inverse .navbar-brand{
-    color: #fbd14b !important;
+    color: #000 !important;
 }
 
 .navbar-inverse .navbar-nav > li > a {
-    color: #fbd14b !important;
+    color: #000 !important;
 }
 
 .hidden{
@@ -52,4 +65,19 @@ input[type="select"] {
 #txtSupportDescr
 {
     height: 50% !important;
+}
+
+.textbox-adjust
+{ 
+    height: 150px !important; 
+    max-width: 350px !important;
+
+}
+
+.list-group-item
+{
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+    padding-right: 0 !important;
+
 }

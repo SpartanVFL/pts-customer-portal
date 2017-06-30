@@ -39,7 +39,7 @@
             </Scripts>
         </asp:ScriptManager>
 
-        <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar navbar-inverse navbar-fixed-top" style="border: none !important; background-color: #f4f5f9 !important;">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -47,26 +47,32 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" runat="server" href="~/">Provisions Technology Solutions</a>
+                    <a runat="server" href="~/">
+                        <img src="/Images/pts-logo.png" alt="Provisions Technology Solutions Logo" style="max-width: 245px; height: auto;"/>
+
+                    </a>
+                    
                 </div>
                 <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
 
-                    </ul>
-                    <asp:LoginView runat="server" ViewStateMode="Disabled">
+                    <asp:LoginView id="loginId" runat="server" visible="true" ViewStateMode="Disabled">
                         <AnonymousTemplate>
-                            <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Default.aspx">Log in</a></li>
+                            <ul class="nav navbar-nav navbar-right" style="padding-top: 1.5rem;">
+                                
+                                
                             </ul>
                         </AnonymousTemplate>
-                        <LoggedInTemplate>
-                            <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
-                                <li>
-                                    <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
-                                </li>
-                            </ul>
-                        </LoggedInTemplate>
+
+                    </asp:LoginView>
+
+                    <asp:LoginView id="logoutId" runat="server" Visible="true">
+                        <AnonymousTemplate>
+                        <ul class="nav navbar-nav navbar-right" style="padding-top: 1.5rem;">
+                            <li><a runat="server" href="~/Service.aspx">Submit Tickets</a></li>
+                            <li><a runat="server" href="~/ViewTickets.aspx">View Tickets</a></li>
+                            <li><a runat="server" href="~/Logout.aspx">Log out</a></li>
+                        </ul>
+                        </AnonymousTemplate>
                     </asp:LoginView>
                 </div>
             </div>
@@ -76,7 +82,13 @@
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - Randell & Matt Productions</p>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <p>&copy; <%: DateTime.Now.Year %> - Provisions Technology Solutions</p>
+                        </div>
+                    </div>
+                </div>
             </footer>
         </div>
     </form>

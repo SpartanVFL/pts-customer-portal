@@ -3,10 +3,10 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
 
-<div class="container content">
+<div class="container content" style="padding-top: 2rem; padding-bottom: 5.75rem;">
     <div class="row" style="padding-top: 5rem;">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <h2>You are currently not logged in...</h2>
+             <h2>You are currently not logged in...</h2>
         </div>
     </div>
 

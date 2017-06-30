@@ -1101,13 +1101,11 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #2780e3;
   text-decoration: none;
 }
 a:hover,
 a:focus {
-  color: #165ba8;
-  text-decoration: underline;
+  text-decoration: none;
 }
 a:focus {
   outline: 5px auto -webkit-focus-ring-color;
@@ -1377,11 +1375,9 @@ a.text-danger:focus {
 }
 .bg-primary {
   color: #fff;
-  background-color: #2780e3;
 }
 a.bg-primary:hover,
 a.bg-primary:focus {
-  background-color: #1967be;
 }
 .bg-success {
   background-color: #3fb618;
@@ -3130,8 +3126,7 @@ fieldset[disabled] .btn-default.focus {
 }
 .btn-primary:hover {
   color: #ffffff;
-  background-color: #1967be;
-  border-color: #1862b5;
+
 }
 .btn-primary:active,
 .btn-primary.active,

@@ -10,51 +10,51 @@
 namespace WebApplication3 {
     
     
-    public partial class Service {
+    public partial class ViewTickets {
         
         /// <summary>
-        /// showConfirmation control.
+        /// uListOpen control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl showConfirmation;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl uListOpen;
         
         /// <summary>
-        /// lblResult control.
+        /// ListRepeater control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblResult;
+        protected global::System.Web.UI.WebControls.Repeater ListRepeater;
         
         /// <summary>
-        /// txtSupportTitle control.
+        /// lblActiveCount control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSupportTitle;
+        protected global::System.Web.UI.WebControls.Label lblActiveCount;
         
         /// <summary>
-        /// RequiredFieldValidator3 control.
+        /// Repeater2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
+        protected global::System.Web.UI.WebControls.Repeater Repeater2;
         
         /// <summary>
-        /// txtSupportDescr control.
+        /// lblClosedCount control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSupportDescr;
+        protected global::System.Web.UI.WebControls.Label lblClosedCount;
     }
 }
